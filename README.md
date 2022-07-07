@@ -1,2 +1,3 @@
-# SA_v1
-e commerce site
+# E-commerce Site
+## Under Coding Club IITG
+### Memebers: Abburi Charishma,Nandini Sharma,
