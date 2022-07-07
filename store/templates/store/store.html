@@ -1,0 +1,91 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block banner %}
+<section id="hero" class="d-flex align-items-center">
+    <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
+        <h1>Welcome to the store...</h1>
+        <h2>Happy Shopping!</h2>
+        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    </div>
+</section>
+
+
+<!-- ======= Clients Section ======= -->
+<section id="clients" class="clients">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="100"><a
+                    href="{% url 'men' %}">
+                    <img src="{% static 'images/Men.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="200"><a
+                    href="{% url 'women' %}">
+                    <img src="{% static 'images/Women.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="300"><a
+                    href="{% url 'kids' %}">
+                    <img src="{% static 'images/Kids.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="400"><a
+                    href="{% url 'books' %}">
+                    <img src="{% static 'images/Books.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="500"><a
+                    href="{% url 'electronics' %}">
+                    <img src="{% static 'images/Electronics.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center" data-aos="zoom-in" data-aos-delay="600"><a
+                    href="{% url 'furniture' %}">
+                    <img src="{% static 'images/Furniture.png' %}" class="img-fluid" alt=""></a>
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End Clients Section -->
+
+{% endblock banner %}
+{% block content %}
+
+
+<!-- <a style="float: right;" class="btn btn-outline-dark" href="{% url 'cart' %}"> Modify Cart</a>
+<br> -->
+
+<div id="about" class="row">
+
+    {% for product in products %}
+    <div class="col-lg-4">
+        <img class="thumbnail" src="{{product.imageURL}}">
+        <div class="box-element product">
+            <h6><strong>{{product.name}}</strong></h6>
+            <hr>
+
+            <button data-product={{product.id}} data-action="add"
+                class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
+            <a class="btn btn-outline-success" href="{% url 'view_product' product.id %}">View</a>
+            <h4 style="display: inline-block; float: right"><strong>${{product.price|floatformat:2}}</strong></h4>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<br>
+<a style="float: right;" class="btn btn-outline-dark" href="{% url 'cart' %}"> Modify Cart</a>
+<br>
+<br>
+<br>
+<br>
+
+
+
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+<div class="overlay">
+    {% if messages %}
+    {% for message in messages %}
+    <h1 class="center">{{message}}</h1>
+    {% endfor %}
+    {% endif %}
+    <!-- LOGN IN FORM by Omar Dsoky -->
+    <form method="post" enctype='multipart/form-data' action="{% url 'add_product' %}">
+        {% csrf_token %}
+
+        <div class="form-group">
+            {{form}}
+        </div>
+
+        <div class="center">
+            <input name="add_product"  id="add_product" type="submit" value="Add Product" >
+        </div>
+    </form>
+</div>a>
+
+{% endblock content %}

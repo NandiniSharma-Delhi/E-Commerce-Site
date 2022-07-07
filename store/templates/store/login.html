@@ -1,0 +1,76 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+
+<div class="overlay">
+    {% if messages %}
+    {% for message in messages %}
+    <h4  class="center">{{message}}</h4>
+    {% endfor %}
+    {% endif %}
+    <!-- LOGN IN FORM by Omar Dsoky -->
+    <form method="POST">
+        {% csrf_token %}
+        <!--   con = Container  for items in the form-->
+        <div class="con">
+            <!--     Start  header Content  -->
+            <header class="head-form">
+                <h2>Log In</h2>
+                <!--     A welcome message or an explanation of the login form -->
+                <p>Login here using your username and password</p>
+            </header>
+            <!--     End  header Content  -->
+            <br>
+            <div class="field-set">
+
+                <!--   user name -->
+                <span class="input-item">
+                    <i class="fa fa-user-circle"></i>
+                </span>
+                <!--   user name Input-->
+
+                <input class="form-input" id="txt-input" name="username" type="text" placeholder="@UserName" required>
+
+                <br>
+
+                <!--   Password -->
+
+                <span class="input-item">
+                    <i class="fa fa-key"></i>
+                </span>
+                <!--   Password Input-->
+                <input class="form-input" type="password" placeholder="Password" id="pwd" name="password" required>
+
+                <!--      Show/hide password  -->
+
+
+                <br>
+                <!--        buttons -->
+                <!--      button LogIn -->
+                <button class="log-in" type="submit"> Log In </button>
+
+            </div>
+            <div class="other">
+                <!--      Forgot Password button-->
+                <a class="btn submits frgt-pass">Don't have an account?</a>
+                <!--     Sign Up button -->
+                <a href="{% url 'register_user' %}" class="btn submits sign-up">Sign Up
+                    <!--         Sign Up font icon -->
+                    <i class="fa fa-user-plus" aria-hidden="true"></i>
+                </a>
+                <!--      End Other the Division -->
+            </div>
+
+            <!--   End Conrainer  -->
+
+        </div>
+
+
+    </form>
+
+
+
+</div>a>
+
+{% endblock content %}
