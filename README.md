@@ -1,6 +1,6 @@
 # E-commerce Site
-## Under Coding Club IITG
-### Memebers: Abburi Charishma,Nandini Sharma, Kandula Sravya
+## Under CSEA IITG
+### Memebers: Abburi Charishma,vNandini Sharma, Kandula Sravya, Vanshita, Deep Kaur
 
 
 
