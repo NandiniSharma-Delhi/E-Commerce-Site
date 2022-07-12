@@ -1,6 +1,6 @@
 # E-commerce Site
 ## Under CSEA IITG
-### Memebers: Abburi Charishma,vNandini Sharma, Kandula Sravya, Vanshita, Deep Kaur
+### Memebers: Abburi Charishma, Nandini Sharma, Kandula Sravya, Vanshita, Deep Kaur
 
 
 
